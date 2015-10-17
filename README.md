@@ -1,1 +1,3 @@
 # Post To Yammer from SharePoint Online
+
+This is a draft of the source code. Not clean yet. I am preparing a complete post on that topic...
