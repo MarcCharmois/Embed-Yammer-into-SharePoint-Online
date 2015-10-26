@@ -3,7 +3,7 @@
  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 </head>
 <body>
-<!-- replace the data-app-id valur by the Client ID of your Yammer App-->
+<!-- replace the data-app-id value by the Client ID of your Yammer App-->
 <script type="text/javascript" data-app-id="aMqiweJ1Co7RQJkHX6TFg" src="https://c64.assets-yammer.com/assets/platform_js_sdk.js"></script>
 <script   src='https://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js' ></script>
 <script>
@@ -12,6 +12,7 @@ var userPicUrl="";
 var messageTime ="";
 function getMyFeed(origin){
 var myFeed="";
+<!-- replace the following image link with yours -->
 document.getElementById("yammer-feed").innerHTML="<img src='/sites/intranet/Images1/ajax-loader1.gif' style='margin-top:100px;margin-left:95px;' />";
 
 console.log("origine : " + origin);
@@ -33,9 +34,9 @@ yam.platform.request(
 					userPicUrl=data.references[j].mugshot_url;				
 				}			
 			}
-            postBody=data.messages[i].body.plain;
+            		postBody=data.messages[i].body.plain;
 			messageTime = data.messages[i].created_at.substring(0,19);
-		    myFeed+= "<br><img style='margin-right:3px;float:left;' src='"+ userPicUrl +"'/><div style='color:rgba(0, 138, 94, 1);font-weight:bold;' >" + userName + "<br><br><span style='font-weight:normal;color:silver'>"+ messageTime +"</span></div><div style='clear:both'></div><br>" +  postBody + "<br>";
+		    	myFeed+= "<br><img style='margin-right:3px;float:left;' src='"+ userPicUrl +"'/><div style='color:rgba(0, 138, 94, 1);font-weight:bold;' >" + userName + "<br><br><span style='font-weight:normal;color:silver'>"+ messageTime +"</span></div><div style='clear:both'></div><br>" +  postBody + "<br>";
 
 			userName="";
        }
@@ -56,7 +57,7 @@ yam.platform.request(
     if (resp.authResponse) {
 	  //you need the following lines if, when the user refreshes the page he has to log again...
 	  //you will have to provide the getMyFeed fucntion with the token for authentication
-      //localStorage.setItem(1, JSON.stringify(resp.access_token.token).replace(/"/g, ""));
+      	  //localStorage.setItem(1, JSON.stringify(resp.access_token.token).replace(/"/g, ""));
 	  //console.log("token" + localStorage.getItem(1));
 
 	  document.getElementById('yammer-login').style.display = 'none';
